@@ -1,0 +1,665 @@
+/* App.css - COMPLETE PrimeReact Styles */
+
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  text-align: center;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* App Container */
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Custom Cards */
+.custom-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e5e7eb !important;
+}
+
+.custom-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-shadow {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom Tabs */
+.custom-tabs .p-tabview-nav {
+  background: transparent;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.custom-tabs .p-tabview-nav-link {
+  border-radius: 8px 8px 0 0;
+  margin-right: 4px;
+  padding: 12px 24px;
+}
+
+.custom-tabs .p-tabview-nav-link.p-highlight {
+  background: linear-gradient(135deg, #5D2C00 0%, #774205 100%);
+  color: white;
+}
+
+/* Custom Buttons */
+.custom-button {
+  background: linear-gradient(135deg, #5D2C00 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.custom-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.custom-button:active {
+  transform: translateY(0);
+}
+
+/* Gradient Utilities */
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-bg-light {
+  background: linear-gradient(135deg, #a5b4fc 0%, #c4b5fd 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Map Styles */
+.leaflet-container {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+  z-index: 0;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Activity Timeline */
+.activity-timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.activity-timeline::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #667eea, #764ba2);
+}
+
+.activity-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.activity-item::before {
+  content: '';
+  position: absolute;
+  left: -25px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #667eea;
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px #667eea;
+}
+
+/* Progress & Stats */
+.progress-container {
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.stats-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Form Styles */
+.form-container {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Loading States */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Fade Animations */
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(10px); }
+}
+
+/* Slide Animations */
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Badge Custom */
+.custom-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-historical { background: #3b82f6; color: white; }
+.badge-scenic { background: #10b981; color: white; }
+.badge-shopping { background: #8b5cf6; color: white; }
+.badge-food { background: #f59e0b; color: white; }
+.badge-adventure { background: #ef4444; color: white; }
+
+/* Icon Sizes */
+.icon-sm { width: 16px; height: 16px; }
+.icon-md { width: 20px; height: 20px; }
+.icon-lg { width: 24px; height: 24px; }
+.icon-xl { width: 32px; height: 32px; }
+.icon-2xl { width: 48px; height: 48px; }
+
+/* Text Utilities */
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 10px;
+  }
+  
+  .mobile-stack {
+    flex-direction: column !important;
+  }
+  
+  .mobile-full-width {
+    width: 100% !important;
+  }
+  
+  .hide-mobile {
+    display: none !important;
+  }
+  
+  .mobile-text-center {
+    text-align: center;
+  }
+  
+  .custom-tabs .p-tabview-nav {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+  
+  .custom-tabs .p-tabview-nav-link {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tablet-half-width {
+    width: 50% !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+  
+  body {
+    background: white !important;
+  }
+  
+  .custom-card {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+.float-left { float: left; }
+.float-right { float: right; }
+.float-none { float: none; }
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.overflow-hidden { overflow: hidden; }
+.overflow-auto { overflow: auto; }
+.overflow-scroll { overflow: scroll; }
+
+.position-relative { position: relative; }
+.position-absolute { position: absolute; }
+.position-fixed { position: fixed; }
+.position-sticky { position: sticky; }
+
+.cursor-pointer { cursor: pointer; }
+.cursor-default { cursor: default; }
+.cursor-not-allowed { cursor: not-allowed; }
+
+.user-select-none { user-select: none; }
+.user-select-text { user-select: text; }
+
+.opacity-0 { opacity: 0; }
+.opacity-25 { opacity: 0.25; }
+.opacity-50 { opacity: 0.5; }
+.opacity-75 { opacity: 0.75; }
+.opacity-100 { opacity: 1; }
+
+.visibility-hidden { visibility: hidden; }
+.visibility-visible { visibility: visible; }
+
+.z-0 { z-index: 0; }
+.z-10 { z-index: 10; }
+.z-20 { z-index: 20; }
+.z-30 { z-index: 30; }
+.z-40 { z-index: 40; }
+.z-50 { z-index: 50; }
+.z-auto { z-index: auto; }
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* PrimeReact Overrides */
+.p-component {
+  font-family: inherit;
+}
+
+.p-inputtext {
+  width: 100%;
+}
+
+.p-dropdown {
+  width: 100%;
+}
+
+.p-calendar {
+  width: 100%;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  background: #f9fafb;
+  font-weight: 600;
+}
+
+.p-progressbar {
+  height: 8px;
+}
+
+.p-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Custom Scroll for specific containers */
+.scroll-container {
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.scroll-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #5D2C00;
+  border-radius: 3px;
+}
+
+/* Hover Effects */
+.hover-lift:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+}
+/* Custom chocolate/ivory color palette */
+:root {
+  --chocolate: #7B3F00;
+  --dark-chocolate: #5D2C00;
+  --light-chocolate: #A65C00;
+  --ivory: #FFFFF0;
+  --warm-ivory: #F5F5DC;
+}
+
+/* Custom color classes */
+.bg-chocolate { background-color: #7B3F00; }
+.text-chocolate { color: #7B3F00; }
+.border-chocolate { border-color: #7B3F00; }
+.hover\:bg-chocolate:hover { background-color: #7B3F00; }
+
+.bg-ivory { background-color: #FFFFF0; }
+.text-ivory { color: #FFFFF0; }
+
+/* Custom button styling */
+.p-button {
+  border-radius: 12px !important;
+  transition: all 0.3s ease;
+}
+
+.p-button.p-button-outlined {
+  border-width: 2px;
+}
+
+/* Number input buttons */
+.p-inputnumber-button {
+  background-color: #7B3F00 !important;
+  border-color: #7B3F00 !important;
+  color: white !important;
+}
+
+.p-inputnumber-button:hover {
+  background-color: #5D2C00 !important;
+  border-color: #5D2C00 !important;
+}
+
+/* Tab styling */
+.p-tabview .p-tabview-nav li .p-tabview-nav-link {
+  border-radius: 8px 8px 0 0;
+  margin-right: 4px;
+  transition: all 0.3s ease;
+}
+
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  background-color: #7B3F00;
+  border-color: #7B3F00;
+  color: white;
+}
+
+/* Card styling */
+.p-card {
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+
+/* Form inputs */
+.p-inputtext:enabled:hover, .p-inputtext:enabled:focus {
+  border-color: #7B3F00 !important;
+  box-shadow: 0 0 0 2px rgba(123, 63, 0, 0.2) !important;
+}
+
+/* Dropdown styling */
+.p-dropdown:not(.p-disabled).p-focus {
+  border-color: #7B3F00 !important;
+  box-shadow: 0 0 0 2px rgba(123, 63, 0, 0.2) !important;
+}
+/* Custom chocolate/ivory color palette */
+:root {
+  --chocolate: #7B3F00;
+  --dark-chocolate: #5D2C00;
+  --light-chocolate: #A65C00;
+  --ivory: #FFFFF0;
+  --warm-ivory: #F5F5DC;
+}
+
+/* Color classes */
+.bg-chocolate { background-color: #7B3F00 !important; }
+.text-chocolate { color: #7B3F00 !important; }
+.border-chocolate { border-color: #7B3F00 !important; }
+.hover\:bg-chocolate:hover { background-color: #7B3F00 !important; }
+
+.bg-ivory { background-color: #FFFFF0 !important; }
+.text-ivory { color: #FFFFF0 !important; }
+
+/* Remove all blue/red/green colors from PrimeReact */
+.p-button {
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Solid chocolate buttons */
+.p-button:not(.p-button-text):not(.p-button-outlined) {
+  background: #7B3F00 !important;
+  border-color: #7B3F00 !important;
+  color: #FFFFF0 !important;
+}
+
+.p-button:not(.p-button-text):not(.p-button-outlined):hover {
+  background: #5D2C00 !important;
+  border-color: #5D2C00 !important;
+}
+
+/* Remove PrimeReact default colors */
+.p-button.p-button-success,
+.p-button.p-button-info,
+.p-button.p-button-warning,
+.p-button.p-button-help,
+.p-button.p-button-danger,
+.p-button.p-button-secondary {
+  background: #7B3F00 !important;
+  border-color: #7B3F00 !important;
+  color: #FFFFF0 !important;
+}
+
+/* Number input buttons - chocolate */
+.p-inputnumber-button {
+  background-color: #7B3F00 !important;
+  border-color: #7B3F00 !important;
+  color: #FFFFF0 !important;
+}
+
+.p-inputnumber-button:hover {
+  background-color: #5D2C00 !important;
+  border-color: #5D2C00 !important;
+}
+
+/* Tab styling - chocolate */
+.p-tabview .p-tabview-nav {
+  border: none !important;
+  background: transparent !important;
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link {
+  border-radius: 8px 8px 0 0 !important;
+  margin-right: 4px !important;
+  transition: all 0.3s ease !important;
+  background: #FFFFF0 !important;
+  border: 1px solid rgba(123, 63, 0, 0.2) !important;
+  color: #7B3F00 !important;
+}
+
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  background-color: #7B3F00 !important;
+  border-color: #7B3F00 !important;
+  color: #FFFFF0 !important;
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus {
+  box-shadow: 0 0 0 2px rgba(123, 63, 0, 0.2) !important;
+}
+
+/* Progress spinner - chocolate */
+.p-progress-spinner-circle {
+  stroke: #7B3F00 !important;
+}
+
+/* Card styling */
+.p-card {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background: #FFFFF0 !important;
+}
+
+.p-card .p-card-title {
+  color: #7B3F00 !important;
+}
+
+.p-card .p-card-subtitle {
+  color: rgba(123, 63, 0, 0.7) !important;
+}
+
+/* Form inputs */
+.p-inputtext:enabled:hover, 
+.p-inputtext:enabled:focus {
+  border-color: #7B3F00 !important;
+  box-shadow: 0 0 0 2px rgba(123, 63, 0, 0.2) !important;
+}
+
+/* Dropdown */
+.p-dropdown:not(.p-disabled).p-focus {
+  border-color: #7B3F00 !important;
+  box-shadow: 0 0 0 2px rgba(123, 63, 0, 0.2) !important;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+  background: rgba(123, 63, 0, 0.1) !important;
+  color: #7B3F00 !important;
+}
+
+/* Calendar */
+.p-datepicker .p-datepicker-header {
+  background: #7B3F00 !important;
+  color: #FFFFF0 !important;
+}
+
+.p-datepicker table td > span.p-highlight {
+  background: #7B3F00 !important;
+  color: #FFFFF0 !important;
+}
+
+/* Remove all badge colors */
+.p-badge {
+  background: #7B3F00 !important;
+  color: #FFFFF0 !important;
+}
+
+/* Remove message colors */
+.p-message.p-message-success,
+.p-message.p-message-info,
+.p-message.p-message-warning,
+.p-message.p-message-error {
+  background: rgba(123, 63, 0, 0.1) !important;
+  border: 1px solid rgba(123, 63, 0, 0.3) !important;
+  color: #7B3F00 !important;
+}
+
+.p-message .p-message-icon {
+  color: #7B3F00 !important;
+}

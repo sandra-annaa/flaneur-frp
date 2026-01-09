@@ -1,0 +1,747 @@
+/* App.css - CHOCOLATE/IVORY THEME ONLY */
+
+/* Custom chocolate/ivory color palette */
+:root {
+  --chocolate: #7B3F00;
+  --dark-chocolate: #5D2C00;
+  --light-chocolate: #A65C00;
+  --ivory: #FFFFF0;
+  --warm-ivory: #F5F5DC;
+  --chocolate-light: rgba(123, 63, 0, 0.1);
+  --chocolate-medium: rgba(123, 63, 0, 0.3);
+  --chocolate-dark: rgba(93, 44, 0, 0.8);
+}
+
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, var(--ivory) 0%, var(--warm-ivory) 100%) !important;
+  min-height: 100vh;
+  text-align: center;
+  color: var(--chocolate) !important;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* App Container */
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Custom Cards */
+.custom-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--chocolate-medium) !important;
+  background: var(--ivory) !important;
+  color: var(--chocolate) !important;
+}
+
+.custom-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px var(--chocolate-light) !important;
+}
+
+.card-shadow {
+  box-shadow: 0 2px 10px var(--chocolate-light);
+}
+
+/* Custom Tabs */
+.custom-tabs .p-tabview-nav {
+  background: transparent !important;
+  border: none !important;
+  margin-bottom: 20px;
+}
+
+.custom-tabs .p-tabview-nav-link {
+  border-radius: 8px 8px 0 0 !important;
+  margin-right: 4px !important;
+  padding: 12px 24px !important;
+  background: var(--ivory) !important;
+  border: 1px solid var(--chocolate-medium) !important;
+  color: var(--chocolate) !important;
+}
+
+.custom-tabs .p-tabview-nav-link.p-highlight {
+  background: var(--chocolate) !important;
+  color: var(--ivory) !important;
+}
+
+/* Custom Buttons */
+.custom-button {
+  background: var(--chocolate) !important;
+  border: none !important;
+  color: var(--ivory) !important;
+  padding: 12px 24px !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+.custom-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 5px 15px var(--chocolate-medium) !important;
+  background: var(--dark-chocolate) !important;
+}
+
+.custom-button:active {
+  transform: translateY(0) !important;
+}
+
+/* Gradient Utilities */
+.gradient-bg {
+  background: linear-gradient(135deg, var(--chocolate) 0%, var(--dark-chocolate) 100%) !important;
+}
+
+.gradient-bg-light {
+  background: linear-gradient(135deg, var(--ivory) 0%, var(--warm-ivory) 100%) !important;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--chocolate) 0%, var(--dark-chocolate) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* Map Styles - Remove all green/blue */
+.leaflet-container {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+  z-index: 0;
+  filter: sepia(0.5) saturate(0.8) brightness(1.1);
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--chocolate-medium) !important;
+}
+
+/* Activity Timeline - Chocolate only */
+.activity-timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.activity-timeline::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--chocolate), var(--light-chocolate)) !important;
+}
+
+.activity-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.activity-item::before {
+  content: '';
+  position: absolute;
+  left: -25px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--chocolate) !important;
+  border: 3px solid var(--ivory) !important;
+  box-shadow: 0 0 0 2px var(--chocolate) !important;
+}
+
+/* Progress & Stats */
+.progress-container {
+  background: var(--chocolate-light) !important;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.stats-card {
+  background: var(--ivory) !important;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid var(--chocolate-medium) !important;
+}
+
+/* Form Styles */
+.form-container {
+  background: var(--ivory) !important;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px var(--chocolate-light);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--chocolate) !important;
+}
+
+/* Loading States */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Fade Animations */
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(10px); }
+}
+
+/* Slide Animations */
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Badge Custom - Chocolate only */
+.custom-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--chocolate) !important;
+  color: var(--ivory) !important;
+}
+
+/* Icon Sizes */
+.icon-sm { width: 16px; height: 16px; color: var(--chocolate) !important; }
+.icon-md { width: 20px; height: 20px; color: var(--chocolate) !important; }
+.icon-lg { width: 24px; height: 24px; color: var(--chocolate) !important; }
+.icon-xl { width: 32px; height: 32px; color: var(--chocolate) !important; }
+.icon-2xl { width: 48px; height: 48px; color: var(--chocolate) !important; }
+
+/* Text Utilities */
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 10px;
+  }
+  
+  .mobile-stack {
+    flex-direction: column !important;
+  }
+  
+  .mobile-full-width {
+    width: 100% !important;
+  }
+  
+  .hide-mobile {
+    display: none !important;
+  }
+  
+  .mobile-text-center {
+    text-align: center;
+  }
+  
+  .custom-tabs .p-tabview-nav {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+  
+  .custom-tabs .p-tabview-nav-link {
+    padding: 8px 16px !important;
+    font-size: 14px !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .tablet-half-width {
+    width: 50% !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+  
+  body {
+    background: var(--ivory) !important;
+  }
+  
+  .custom-card {
+    box-shadow: none !important;
+    border: 1px solid var(--chocolate) !important;
+  }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+.float-left { float: left; }
+.float-right { float: right; }
+.float-none { float: none; }
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.overflow-hidden { overflow: hidden; }
+.overflow-auto { overflow: auto; }
+.overflow-scroll { overflow: scroll; }
+
+.position-relative { position: relative; }
+.position-absolute { position: absolute; }
+.position-fixed { position: fixed; }
+.position-sticky { position: sticky; }
+
+.cursor-pointer { cursor: pointer; }
+.cursor-default { cursor: default; }
+.cursor-not-allowed { cursor: not-allowed; }
+
+.user-select-none { user-select: none; }
+.user-select-text { user-select: text; }
+
+.opacity-0 { opacity: 0; }
+.opacity-25 { opacity: 0.25; }
+.opacity-50 { opacity: 0.5; }
+.opacity-75 { opacity: 0.75; }
+.opacity-100 { opacity: 1; }
+
+.visibility-hidden { visibility: hidden; }
+.visibility-visible { visibility: visible; }
+
+.z-0 { z-index: 0; }
+.z-10 { z-index: 10; }
+.z-20 { z-index: 20; }
+.z-30 { z-index: 30; }
+.z-40 { z-index: 40; }
+.z-50 { z-index: 50; }
+.z-auto { z-index: auto; }
+
+/* Scrollbar Styling - Chocolate */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--chocolate-light) !important;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--chocolate) !important;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-chocolate) !important;
+}
+
+/* PrimeReact Overrides - CHOCOLATE/IVORY ONLY */
+.p-component {
+  font-family: inherit;
+  color: var(--chocolate) !important;
+}
+
+.p-inputtext {
+  width: 100%;
+  border-color: var(--chocolate-medium) !important;
+  color: var(--chocolate) !important;
+}
+
+.p-inputtext:enabled:hover, 
+.p-inputtext:enabled:focus {
+  border-color: var(--chocolate) !important;
+  box-shadow: 0 0 0 2px var(--chocolate-light) !important;
+}
+
+.p-dropdown {
+  width: 100%;
+  border-color: var(--chocolate-medium) !important;
+  background: var(--ivory) !important;
+  color: var(--chocolate) !important;
+}
+
+.p-dropdown:not(.p-disabled).p-focus {
+  border-color: var(--chocolate) !important;
+  box-shadow: 0 0 0 2px var(--chocolate-light) !important;
+}
+
+.p-dropdown-panel {
+  background: var(--ivory) !important;
+  border: 1px solid var(--chocolate-medium) !important;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+  color: var(--chocolate) !important;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+  background: var(--chocolate-light) !important;
+  color: var(--chocolate) !important;
+}
+
+.p-calendar {
+  width: 100%;
+}
+
+.p-datepicker {
+  background: var(--ivory) !important;
+  border: 1px solid var(--chocolate-medium) !important;
+  color: var(--chocolate) !important;
+}
+
+.p-datepicker .p-datepicker-header {
+  background: var(--chocolate) !important;
+  color: var(--ivory) !important;
+}
+
+.p-datepicker table td > span {
+  color: var(--chocolate) !important;
+}
+
+.p-datepicker table td > span.p-highlight {
+  background: var(--chocolate) !important;
+  color: var(--ivory) !important;
+}
+
+.p-datepicker table td.p-datepicker-today > span {
+  background: var(--chocolate-light) !important;
+  color: var(--chocolate) !important;
+}
+
+/* All buttons - Chocolate */
+.p-button {
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+  background: var(--chocolate) !important;
+  border-color: var(--chocolate) !important;
+  color: var(--ivory) !important;
+}
+
+.p-button:hover {
+  background: var(--dark-chocolate) !important;
+  border-color: var(--dark-chocolate) !important;
+}
+
+.p-button:focus {
+  box-shadow: 0 0 0 2px var(--chocolate-light) !important;
+}
+
+/* Remove ALL PrimeReact default colors */
+.p-button.p-button-success,
+.p-button.p-button-info,
+.p-button.p-button-warning,
+.p-button.p-button-help,
+.p-button.p-button-danger,
+.p-button.p-button-secondary {
+  background: var(--chocolate) !important;
+  border-color: var(--chocolate) !important;
+  color: var(--ivory) !important;
+}
+
+/* Number input buttons - chocolate */
+.p-inputnumber-button {
+  background-color: var(--chocolate) !important;
+  border-color: var(--chocolate) !important;
+  color: var(--ivory) !important;
+}
+
+.p-inputnumber-button:hover {
+  background-color: var(--dark-chocolate) !important;
+  border-color: var(--dark-chocolate) !important;
+}
+
+/* Progress spinner - chocolate */
+.p-progress-spinner-circle {
+  stroke: var(--chocolate) !important;
+}
+
+/* Card styling */
+.p-card {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background: var(--ivory) !important;
+  border: 1px solid var(--chocolate-medium) !important;
+}
+
+.p-card .p-card-title {
+  color: var(--chocolate) !important;
+}
+
+.p-card .p-card-subtitle {
+  color: var(--chocolate-dark) !important;
+}
+
+.p-card .p-card-content,
+.p-card .p-card-footer {
+  color: var(--chocolate) !important;
+}
+
+/* Badges - Chocolate only */
+.p-badge {
+  background: var(--chocolate) !important;
+  color: var(--ivory) !important;
+  border-radius: 12px !important;
+}
+
+/* Messages - Chocolate only */
+.p-message {
+  background: var(--chocolate-light) !important;
+  border: 1px solid var(--chocolate-medium) !important;
+  border-width: 1px !important;
+  color: var(--chocolate) !important;
+}
+
+.p-message .p-message-icon {
+  color: var(--chocolate) !important;
+}
+
+/* Tab styling - chocolate */
+.p-tabview .p-tabview-nav {
+  border: none !important;
+  background: transparent !important;
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link {
+  border-radius: 8px 8px 0 0 !important;
+  margin-right: 4px !important;
+  transition: all 0.3s ease !important;
+  background: var(--ivory) !important;
+  border: 1px solid var(--chocolate-medium) !important;
+  color: var(--chocolate) !important;
+}
+
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  background-color: var(--chocolate) !important;
+  border-color: var(--chocolate) !important;
+  color: var(--ivory) !important;
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus {
+  box-shadow: 0 0 0 2px var(--chocolate-light) !important;
+}
+
+/* Toast/Notifications - Chocolate */
+.p-toast .p-toast-message {
+  background: var(--ivory) !important;
+  border: 1px solid var(--chocolate-medium) !important;
+  color: var(--chocolate) !important;
+}
+
+.p-toast .p-toast-message .p-toast-icon {
+  color: var(--chocolate) !important;
+}
+
+/* Tooltip - Chocolate */
+.p-tooltip .p-tooltip-text {
+  background: var(--chocolate) !important;
+  color: var(--ivory) !important;
+}
+
+/* Dialog - Chocolate */
+.p-dialog {
+  background: var(--ivory) !important;
+  border: 1px solid var(--chocolate-medium) !important;
+}
+
+.p-dialog .p-dialog-header {
+  background: var(--chocolate) !important;
+  color: var(--ivory) !important;
+}
+
+.p-dialog .p-dialog-content {
+  color: var(--chocolate) !important;
+}
+
+/* Table styling - Chocolate */
+.p-datatable {
+  color: var(--chocolate) !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  background: var(--chocolate-light) !important;
+  color: var(--chocolate) !important;
+  border-color: var(--chocolate-medium) !important;
+}
+
+.p-datatable .p-datatable-tbody > tr {
+  background: var(--ivory) !important;
+  color: var(--chocolate) !important;
+}
+
+.p-datatable .p-datatable-tbody > tr:nth-child(even) {
+  background: var(--chocolate-light) !important;
+}
+
+.p-datatable .p-datatable-tbody > tr:hover {
+  background: var(--chocolate-medium) !important;
+}
+
+/* Checkbox/Radio - Chocolate */
+.p-checkbox .p-checkbox-box {
+  border-color: var(--chocolate-medium) !important;
+}
+
+.p-checkbox .p-checkbox-box.p-highlight {
+  background: var(--chocolate) !important;
+  border-color: var(--chocolate) !important;
+}
+
+.p-checkbox .p-checkbox-icon {
+  color: var(--ivory) !important;
+}
+
+/* Input switch - Chocolate */
+.p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+  background: var(--chocolate) !important;
+}
+
+/* Scroll for specific containers */
+.scroll-container {
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.scroll-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: var(--chocolate) !important;
+  border-radius: 3px;
+}
+
+/* Hover Effects */
+.hover-lift:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px var(--chocolate-light) !important;
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+}
+
+/* Text colors */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--chocolate) !important;
+}
+
+p, span, div {
+  color: var(--chocolate) !important;
+}
+
+a {
+  color: var(--chocolate) !important;
+}
+
+a:hover {
+  color: var(--dark-chocolate) !important;
+}
+
+/* Remove any remaining blue/red/green classes */
+.text-blue-600,
+.text-blue-500,
+.text-blue-400,
+.text-red-500,
+.text-red-400,
+.text-green-500,
+.text-green-400,
+.text-purple-500,
+.text-purple-400,
+.text-yellow-500,
+.text-yellow-400,
+.bg-blue-50,
+.bg-red-50,
+.bg-green-50,
+.bg-purple-50,
+.bg-yellow-50,
+.border-blue-200,
+.border-red-200,
+.border-green-200,
+.border-purple-200,
+.border-yellow-200 {
+  color: var(--chocolate) !important;
+  background: var(--chocolate-light) !important;
+  border-color: var(--chocolate-medium) !important;
+}
+
+/* Force all icons to chocolate */
+.pi {
+  color: var(--chocolate) !important;
+}
+
+/* Force all borders to chocolate */
+[class*="border-"] {
+  border-color: var(--chocolate-medium) !important;
+}
+
+/* Force all backgrounds to ivory/chocolate */
+[class*="bg-"]:not(.bg-chocolate):not(.bg-ivory) {
+  background: var(--chocolate-light) !important;
+}

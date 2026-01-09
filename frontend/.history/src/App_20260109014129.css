@@ -1,0 +1,328 @@
+/* App.css - CHOCOLATE/IVORY THEME - FIXED */
+
+/* Import chocolate theme first */
+:root {
+  --chocolate: #7B3F00 !important;
+  --dark-chocolate: #5D2C00 !important;
+  --light-chocolate: #A65C00 !important;
+  --ivory: #FFFFF0 !important;
+  --warm-ivory: #F5F5DC !important;
+  --chocolate-light: rgba(123, 63, 0, 0.1) !important;
+  --chocolate-medium: rgba(123, 63, 0, 0.3) !important;
+  --chocolate-dark: rgba(93, 44, 0, 0.8) !important;
+}
+
+/* OVERRIDE EVERYTHING - Use body selector to increase specificity */
+body .p-button,
+body .p-button.p-button-success,
+body .p-button.p-button-info,
+body .p-button.p-button-warning,
+body .p-button.p-button-help,
+body .p-button.p-button-danger,
+body .p-button.p-button-secondary {
+  background: #7B3F00 !important;
+  border-color: #7B3F00 !important;
+  color: #FFFFF0 !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+}
+
+body .p-button:hover {
+  background: #5D2C00 !important;
+  border-color: #5D2C00 !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Button text colors */
+body .p-button-label {
+  color: #FFFFF0 !important;
+}
+
+/* Number input buttons */
+body .p-inputnumber-button {
+  background-color: #7B3F00 !important;
+  border-color: #7B3F00 !important;
+  color: #FFFFF0 !important;
+}
+
+body .p-inputnumber-button:hover {
+  background-color: #5D2C00 !important;
+  border-color: #5D2C00 !important;
+}
+
+/* Override all PrimeReact colors in one go */
+body [class*="p-"] {
+  color: #7B3F00 !important;
+}
+
+/* Cards - Force override */
+body .p-card,
+body .p-card .p-card-body,
+body .p-card .p-card-content,
+body .p-card .p-card-title,
+body .p-card .p-card-subtitle {
+  background: #FFFFF0 !important;
+  color: #7B3F00 !important;
+  border-color: rgba(123, 63, 0, 0.3) !important;
+  border-radius: 12px !important;
+}
+
+/* Inputs */
+body .p-inputtext,
+body .p-dropdown,
+body .p-multiselect,
+body .p-calendar {
+  border-color: rgba(123, 63, 0, 0.3) !important;
+  background: #FFFFF0 !important;
+  color: #7B3F00 !important;
+}
+
+body .p-inputtext:focus,
+body .p-dropdown:focus,
+body .p-multiselect:focus,
+body .p-calendar:focus {
+  border-color: #7B3F00 !important;
+  box-shadow: 0 0 0 2px rgba(123, 63, 0, 0.2) !important;
+}
+
+/* Tabs */
+body .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+  background: #FFFFF0 !important;
+  color: #7B3F00 !important;
+  border-color: rgba(123, 63, 0, 0.3) !important;
+}
+
+body .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  background: #7B3F00 !important;
+  color: #FFFFF0 !important;
+  border-color: #7B3F00 !important;
+}
+
+/* Badges */
+body .p-badge {
+  background: #7B3F00 !important;
+  color: #FFFFF0 !important;
+}
+
+/* Progress spinner */
+body .p-progress-spinner-circle {
+  stroke: #7B3F00 !important;
+}
+
+/* Dropdown */
+body .p-dropdown-panel {
+  background: #FFFFF0 !important;
+  border-color: rgba(123, 63, 0, 0.3) !important;
+}
+
+body .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+  background: rgba(123, 63, 0, 0.1) !important;
+  color: #7B3F00 !important;
+}
+
+/* Calendar */
+body .p-datepicker {
+  background: #FFFFF0 !important;
+  border-color: rgba(123, 63, 0, 0.3) !important;
+}
+
+body .p-datepicker .p-datepicker-header {
+  background: #7B3F00 !important;
+  color: #FFFFF0 !important;
+}
+
+body .p-datepicker table td > span.p-highlight {
+  background: #7B3F00 !important;
+  color: #FFFFF0 !important;
+}
+
+/* Remove ALL Tailwind colors - Force override */
+body .text-blue-600,
+body .text-blue-500,
+body .text-blue-400,
+body .text-red-500,
+body .text-red-400,
+body .text-green-500,
+body .text-green-400,
+body .text-purple-500,
+body .text-purple-400,
+body .text-yellow-500,
+body .text-yellow-400,
+body .text-pink-500,
+body .text-indigo-500,
+body .text-teal-500,
+body .text-cyan-500,
+body .text-orange-500,
+body .text-gray-500,
+body .text-gray-600,
+body .text-gray-700,
+body .text-gray-800,
+body .text-gray-900 {
+  color: #7B3F00 !important;
+}
+
+/* Background colors */
+body .bg-blue-50,
+body .bg-blue-100,
+body .bg-blue-200,
+body .bg-red-50,
+body .bg-red-100,
+body .bg-green-50,
+body .bg-green-100,
+body .bg-purple-50,
+body .bg-purple-100,
+body .bg-yellow-50,
+body .bg-yellow-100,
+body .bg-pink-50,
+body .bg-pink-100,
+body .bg-indigo-50,
+body .bg-indigo-100,
+body .bg-teal-50,
+body .bg-teal-100,
+body .bg-cyan-50,
+body .bg-cyan-100,
+body .bg-orange-50,
+body .bg-orange-100,
+body .bg-gray-50,
+body .bg-gray-100,
+body .bg-gray-200 {
+  background: rgba(123, 63, 0, 0.1) !important;
+}
+
+/* Border colors */
+body .border-blue-200,
+body .border-blue-300,
+body .border-red-200,
+body .border-red-300,
+body .border-green-200,
+body .border-green-300,
+body .border-purple-200,
+body .border-purple-300,
+body .border-yellow-200,
+body .border-yellow-300,
+body .border-pink-200,
+body .border-pink-300,
+body .border-indigo-200,
+body .border-indigo-300,
+body .border-teal-200,
+body .border-teal-300,
+body .border-cyan-200,
+body .border-cyan-300,
+body .border-orange-200,
+body .border-orange-300,
+body .border-gray-200,
+body .border-gray-300 {
+  border-color: rgba(123, 63, 0, 0.3) !important;
+}
+
+/* Custom utility classes that actually work */
+.bg-chocolate { background-color: #7B3F00 !important; }
+.text-chocolate { color: #7B3F00 !important; }
+.border-chocolate { border-color: #7B3F00 !important; }
+
+.bg-ivory { background-color: #FFFFF0 !important; }
+.text-ivory { color: #FFFFF0 !important; }
+
+/* Apply to your specific components */
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body p,
+body span,
+body div:not([class*="p-"]) {
+  color: #7B3F00 !important;
+}
+
+/* Force background on body */
+body {
+  background: linear-gradient(135deg, #FFFFF0 0%, #F5F5DC 100%) !important;
+  color: #7B3F00 !important;
+}
+
+/* For icons */
+body .pi {
+  color: #7B3F00 !important;
+}
+
+/* For buttons inside your App.tsx */
+body .logout-button,
+body .trip-button,
+body .submit-button {
+  background: #7B3F00 !important;
+  color: #FFFFF0 !important;
+  border-color: #7B3F00 !important;
+}
+
+/* If using Tailwind classes directly in JSX */
+body .from-blue-50,
+body .to-indigo-50,
+body .via-white,
+body .from-blue-600,
+body .to-purple-600,
+body .to-pink-600,
+body .via-purple-600 {
+  background: #FFFFF0 !important;
+  color: #7B3F00 !important;
+}
+
+/* Override any gradient backgrounds */
+body [class*="from-"],
+body [class*="to-"],
+body [class*="via-"] {
+  background: #FFFFF0 !important;
+  color: #7B3F00 !important;
+}
+
+/* Specific for your Flâneur heading */
+body h1.text-5xl {
+  color: #7B3F00 !important;
+}
+
+/* For the 4 feature cards */
+body .grid.grid-cols-4 .p-card {
+  background: #FFFFF0 !important;
+  border-color: rgba(123, 63, 0, 0.3) !important;
+}
+
+body .grid.grid-cols-4 .pi {
+  color: #7B3F00 !important;
+}
+
+/* Emergency fix: Add inline styles via JavaScript */
+const addInlineStyles = () => {
+  const style = document.createElement('style');
+  style.innerHTML = `
+    /* FORCE CHOCOLATE/IVORY EVERYWHERE */
+    * {
+      color: #7B3F00 !important;
+    }
+    
+    button, .p-button {
+      background: #7B3F00 !important;
+      border-color: #7B3F00 !important;
+      color: #FFFFF0 !important;
+      border-radius: 12px !important;
+    }
+    
+    .p-card, .card, [class*="card"] {
+      background: #FFFFF0 !important;
+      border-color: rgba(123, 63, 0, 0.3) !important;
+    }
+    
+    input, select, textarea, .p-inputtext {
+      border-color: rgba(123, 63, 0, 0.3) !important;
+      background: #FFFFF0 !important;
+      color: #7B3F00 !important;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #FFFFF0 0%, #F5F5DC 100%) !important;
+    }
+  `;
+  document.head.appendChild(style);
+};
+
+// Call this function in your App.tsx useEffect

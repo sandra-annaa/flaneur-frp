@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flaneur FRP</title>
+    
+    <!-- PrimeReact CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/primereact/resources/themes/lara-light-indigo/theme.css" />
+    <link rel="stylesheet" href="https://unpkg.com/primereact/resources/primereact.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/primeicons/primeicons.css" />
+    <link rel="stylesheet" href="https://unpkg.com/primeflex@3.3.1/primeflex.min.css">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        background: linear-gradient(135deg, #fdf8f6 0%, #f5f3ec 100%);
+        min-height: 100vh;
+      }
+      
+      #root {
+        min-height: 100vh;
+      }
+      
+      .leaflet-container {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+      }
+      
+      .p-card.map-card {
+        height: 100%;
+      }
+      
+      /* Debug styles */
+      .debug-border {
+        border: 2px solid red !important;
+      }
+      
+      /* Chocolate/Ivory theme */
+      :root {
+        --chocolate-50: #fdf8f6;
+        --chocolate-100: #f2e8e5;
+        --chocolate-200: #eaddd7;
+        --chocolate-300: #e0cec7;
+        --chocolate-400: #d2bab0;
+        --chocolate-500: #bfa094;
+        --chocolate-600: #8B7355;
+        --chocolate-700: #6B4F37;
+        --chocolate-800: #5D4037;
+        --chocolate-900: #3E2723;
+        
+        --ivory-50: #fefefe;
+        --ivory-100: #fdfcfb;
+        --ivory-200: #fbfaf8;
+        --ivory-300: #f9f7f4;
+        --ivory-400: #f7f5f0;
+        --ivory-500: #f5f3ec;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Debug script -->
+    <script>
+      // Check if React is loaded
+      window.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM loaded, checking React...');
+        
+        // Check after a delay to see if React renders
+        setTimeout(function() {
+          const root = document.getElementById('root');
+          if (root && root.innerHTML === '') {
+            console.error('⚠️ Root element is empty! React may not be loading.');
+            // Show error message
+            root.innerHTML = `
+              <div style="padding: 50px; text-align: center; color: #3E2723;">
+                <h1 style="color: #8B7355;">⚠️ Application Loading Issue</h1>
+                <p>If you see this, React might not be loading properly.</p>
+                <p>Check browser console for errors.</p>
+                <button onclick="location.reload()" style="
+                  background: #6B4F37;
+                  color: white;
+                  border: none;
+                  padding: 10px 20px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  margin-top: 20px;
+                ">Reload Page</button>
+              </div>
+            `;
+          } else {
+            console.log('✅ Root element has content:', root.innerHTML.length, 'characters');
+          }
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
