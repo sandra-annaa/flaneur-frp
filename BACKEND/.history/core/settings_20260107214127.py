@@ -158,3 +158,6 @@ CORS_ALLOW_HEADERS = [
     'user-agent',
     'x-requested-with',
 ]
+# Add at the bottom
+# OpenAI Configuration
+# OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY', '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')
